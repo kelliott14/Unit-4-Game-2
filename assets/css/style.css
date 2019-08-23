@@ -19,6 +19,7 @@ body{
 .scorecardCard{
     margin-top: 20px;
     text-align: center;
+    height: 310px;
 }
 
 .attackCard{
@@ -33,4 +34,9 @@ body{
 .defenderCard{
     height: 310px;
     background-color: #D8D9D9;
+    opacity: 0.8;
+}
+
+.selectorGroup{
+    height: 310px;
 }

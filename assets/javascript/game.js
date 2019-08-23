@@ -1,27 +1,3 @@
-var waterElement = {
-    "HealthPoints" : 100,
-    "AttackPower" : 10,
-    "CounterAttackPower" : 10
-};
-
-var earthElement = {
-    "HealthPoints" : "100",
-    "AttackPower" : "10",
-    "CounterAttackPower" : "10"
-};
-
-var fireElement = {
-    "HealthPoints" : "100",
-    "AttackPower" : "10",
-    "CounterAttackPower" : "10"
-};
-
-var airElement = {
-    "HealthPoints" : "100",
-    "AttackPower" : "10",
-    "CounterAttackPower" : "10"
-};
-
 var currentAP;
 var currentFighter;
 var currentFighterHP;
@@ -35,6 +11,8 @@ var attackReady;
 var fighterChosen;
 var defenderChosen;
 
+var rounds;
+
 //start the game. Or restart.
 function startGame(){
     $(".currentFighter").text("Choose your fighter");
@@ -45,6 +23,7 @@ function startGame(){
     defenderChosen = false;
     attackReady = false;
     currentAP = 0;
+    rounds = 0;
     
     $(".attackButton").hide();
 
@@ -59,7 +38,7 @@ $(".elementChar").on("click", function(){
     if (!fighterChosen){
         currentAP = $(this).attr("attack-points")
         currentFighterHP = $(this).attr("health-points")
-        $(".HPDisplay").empty();
+       // $(".HPDisplay").empty();
 
         $(".currentFighter").html(this);
         fighterChosen = true;
@@ -90,7 +69,13 @@ if ((fighterChosen == true) && (defenderChosen == true)){
 function attack(){
     $(".attackButton").show();
     $(".attackButton").html("ATTACK");
-    
+    $(".nextRoundText").text("")
+   
+}
+
+function ceaseAttack(){
+    $(".attackButton").hide();
+    rounds++
 }
 
 //Attack button clicks
@@ -104,5 +89,22 @@ $(".attackButton").on("click", function(){
     $(".currentHPText").text("Health Points = " + currentFighterHP);
     $(".currentDefenderHPText").text("Health Points = " + currentDefenderHP);
     currentAP = currentAP + 6;
-    console.log(typeof(currentAP));
+   
+
+    if(currentFighterHP < 0){
+        $(".nextRoundText").text("You loose. Refresh to play again.")
+        attackReady = false;
+        ceaseAttack();
+    
+    }else if(currentDefenderHP < 0){
+        $(".nextRoundText").text("You win. Select another defender.")
+        defenderChosen = false;
+        attackReady = false;
+        ceaseAttack();
+    }
+
+    if(rounds == 3){
+        $(".scorecardCard").html("<h2>You win! Refresh to play again.</h2>")
+    }
+
 });
