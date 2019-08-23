@@ -1,11 +1,35 @@
-var waterElement;
-var earthElement;
-var fireElement;
-var airElement;
+var waterElement = {
+    "HealthPoints" : 100,
+    "AttackPower" : 10,
+    "CounterAttackPower" : 10
+};
+
+var earthElement = {
+    "HealthPoints" : "100",
+    "AttackPower" : "10",
+    "CounterAttackPower" : "10"
+};
+
+var fireElement = {
+    "HealthPoints" : "100",
+    "AttackPower" : "10",
+    "CounterAttackPower" : "10"
+};
+
+var airElement = {
+    "HealthPoints" : "100",
+    "AttackPower" : "10",
+    "CounterAttackPower" : "10"
+};
 
 var currentAP;
 var currentFighter;
+var currentFighterHP;
+
 var currentDefender;
+var currentDefenderHP;
+var currentDefenderCAP;
+
 var attackReady;
 
 var fighterChosen;
@@ -15,10 +39,7 @@ var defenderChosen;
 function startGame(){
     $(".currentFighter").text("Choose your fighter");
     $(".currentDefender").text("Choose your fighter");
-    waterElement = 100;
-    earthElement = 100;
-    fireElement = 100;
-    picElement = 100;
+    
     
     fighterChosen = false;
     defenderChosen = false;
@@ -35,19 +56,24 @@ startGame();
 //Choosing fighter and defender
 $(".elementChar").on("click", function(){
     if (!fighterChosen){
-        currentFighter = this.id;
+        currentAP = $(this).attr("attack-points")
+        currentFighterHP = $(this).attr("health-points")
+
         $(".currentFighter").html(this);
         fighterChosen = true;
+        
 
         $(".currentDefender").text("Choose your defender");
     
     }else{        
-        currentDefender = this.id;
+        currentDefenderCAP = $(this).attr("counter-attack-points");
+        currentDefenderHP = $(this).attr("health-points");
         $(".currentDefender").html(this);
         defenderChosen = true;
-        console.log(attackReady);
+        
     }
 });
+
 
 
 //Attack
@@ -59,4 +85,16 @@ if ((fighterChosen == true) && (defenderChosen == true)){
 
 function attack(){
     $(".attackButton").html("ATTACK");
+    
+    
 }
+
+$(".attackButton").on("click", function(){
+    
+    currentDefenderHP = currentDefenderHP - currentAP;
+    currentFighterHP = currentFighterHP - currentDefenderCAP;
+
+    $("#attackText").text("You hit for " + currentAP);
+    $("#hitterText").text("They hit for " + currentDefenderCAP);
+
+});

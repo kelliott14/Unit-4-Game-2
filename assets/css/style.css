@@ -27,3 +27,8 @@ body{
 .attackButton{
     height: 100px;
 }
+
+.fighterCard,
+.defenderCard{
+    height: 310px;
+}
