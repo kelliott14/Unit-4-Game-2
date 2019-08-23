@@ -16,19 +16,19 @@
                 <h5 class="card-title selectorHeader">Your elements</h5>
                 <div class="card bg-transparent text-center elementChar" id="waterElement" counter-attack-points="10" health-points="100" attack-points="100">
                     <img class="card-img-top rounded mx-auto d-block elementPics"  src="./assets/images/waterpic.jpg">
-                    <h5 class="card-title">Health Points = 100</h5>
+                    <h5 class="card-title HPDisplay">Health Points = 100</h5>
                 </div>
                 <div class="card bg-transparent text-center elementChar" id="earthElement" counter-attack-points="10" health-points="100" attack-points="100">
                         <img class="card-img-top rounded mx-auto d-block elementPics"  src="./assets/images/earthpic.jpg">
-                        <h5 class="card-title">Health Level = 100</h5>
+                        <h5 class="card-title HPDisplay">Health Level = 100</h5>
                 </div>
-                <div class="card bg-transparent text-center elementChar">
-                        <img class="card-img-top rounded mx-auto d-block elementPics" id="fireElement" src="./assets/images/firepic.jpg">
-                        <h5 class="card-title">Health Level = 100</h5>
+                <div class="card bg-transparent text-center elementChar" id="fireElement" counter-attack-points="10" health-points="100" attack-points="100">
+                        <img class="card-img-top rounded mx-auto d-block elementPics"  src="./assets/images/firepic.jpg">
+                        <h5 class="card-title HPDisplay">Health Level = 100</h5>
                 </div>
-                <div class="card bg-transparent text-center elementChar">
-                        <img class="card-img-top rounded mx-auto d-block elementPics" id="airElement" src="./assets/images/airpic.jpg">
-                        <h5 class="card-title">Health Level = 100</h5>
+                <div class="card bg-transparent text-center elementChar" id="fireElement" counter-attack-points="10" health-points="100" attack-points="100">
+                        <img class="card-img-top rounded mx-auto d-block elementPics" id="airElement" counter-attack-points="10" health-points="100" attack-points="100" src="./assets/images/airpic.jpg">
+                        <h5 class="card-title HPDisplay">Health Level = 100</h5>
                 </div>                   
             </div>
         </div>
@@ -36,9 +36,9 @@
 
     <div class="row">
         <div class="col-md-5">
-            <div class="card fighterCard">
-                <p class="currentFighter"></p>
-                <p class="currentHPText"></p>
+            <div class="card text-center fighterCard">
+                <div class="card-img-top rounded mx-auto d-block currentFighter"></div>
+                <h5 class="card-title currentHPText"></h5>
             </div>
         </div>
         <div class="col-md-2">
@@ -47,8 +47,9 @@
             </div>
         </div>
         <div class="col-md-5">
-            <div class="card defenderCard">
-                <p class="currentDefender"></p>
+            <div class="card text-center defenderCard">
+                <div class="card-img-top rounded mx-auto d-block currentDefender"></div>
+                <h5 class="card-title currentDefenderHPText"></h5>
             </div>
         </div>
     </div>

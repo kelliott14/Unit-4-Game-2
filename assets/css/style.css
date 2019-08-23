@@ -31,4 +31,5 @@ body{
 .fighterCard,
 .defenderCard{
     height: 310px;
+    background-color: #D8D9D9;
 }

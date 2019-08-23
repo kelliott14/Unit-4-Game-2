@@ -58,11 +58,12 @@ $(".elementChar").on("click", function(){
     if (!fighterChosen){
         currentAP = $(this).attr("attack-points")
         currentFighterHP = $(this).attr("health-points")
+        $(".HPDisplay").empty();
 
         $(".currentFighter").html(this);
         fighterChosen = true;
         
-
+        $(".currentHPText").text("Health Points = " + currentFighterHP);
         $(".currentDefender").text("Choose your defender");
     
     }else{        
@@ -70,6 +71,8 @@ $(".elementChar").on("click", function(){
         currentDefenderHP = $(this).attr("health-points");
         $(".currentDefender").html(this);
         defenderChosen = true;
+
+        $(".currentDefenderHPText").text("Health Points = " + currentDefenderHP);
         
     }
 });
@@ -86,9 +89,9 @@ if ((fighterChosen == true) && (defenderChosen == true)){
 function attack(){
     $(".attackButton").html("ATTACK");
     
-    
 }
 
+//Attack button clicks
 $(".attackButton").on("click", function(){
     
     currentDefenderHP = currentDefenderHP - currentAP;
@@ -96,5 +99,8 @@ $(".attackButton").on("click", function(){
 
     $("#attackText").text("You hit for " + currentAP);
     $("#hitterText").text("They hit for " + currentDefenderCAP);
+    $(".currentHPText").text("Health Points = " + currentFighterHP);
+    $(".currentDefenderHPText").text("Health Points = " + currentDefenderHP);
+    
 
 });
