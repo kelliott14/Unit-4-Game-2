@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>In Your Element</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card selectorCard">
+                <div class="card-body">
+                    <h5 class="card-title selectorHeader">Your elements</h5>
+                    <img class="img-responsive elementChar" id="waterElement" src="./assets/images/waterpic.jpg">
+                    <img class="img-responsive elementChar" id="earthElement" src="./assets/images/earthpic.jpg">
+                    <img class="img-responsive elementChar" id="fireElement" src="./assets/images/firepic.jpg">
+                    <img class="img-responsive elementChar" id="airElement" src="./assets/images/airpic.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card fighterCard">
+                <p class = "currentFighter"></p>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card attackCard">
+                <button class = "attachButton"></button>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="card defenderCard">
+                <p class = "currentDefender"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="card scorecardCard">
+                <div class="card-body">
+                    <h5 class="card-title scorecardHeader">Scorecard</h5>
+                    <p id="attackText">You hit for</p>
+                    <p id="hitterText">They hit for</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="./assets/javascript/game.js"></script>
+
+</html>
