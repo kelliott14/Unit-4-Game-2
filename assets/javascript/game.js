@@ -46,6 +46,7 @@ function startGame(){
     attackReady = false;
     currentAP = 0;
     
+    $(".attackButton").hide();
 
 }
 
@@ -66,7 +67,7 @@ $(".elementChar").on("click", function(){
         $(".currentHPText").text("Health Points = " + currentFighterHP);
         $(".currentDefender").text("Choose your defender");
     
-    }else{        
+    }else if(!defenderChosen){        
         currentDefenderCAP = $(this).attr("counter-attack-points");
         currentDefenderHP = $(this).attr("health-points");
         $(".currentDefender").html(this);
@@ -87,13 +88,14 @@ if ((fighterChosen == true) && (defenderChosen == true)){
 }})
 
 function attack(){
+    $(".attackButton").show();
     $(".attackButton").html("ATTACK");
     
 }
 
 //Attack button clicks
 $(".attackButton").on("click", function(){
-    
+    currentAP = parseInt(currentAP);
     currentDefenderHP = currentDefenderHP - currentAP;
     currentFighterHP = currentFighterHP - currentDefenderCAP;
 
@@ -101,6 +103,6 @@ $(".attackButton").on("click", function(){
     $("#hitterText").text("They hit for " + currentDefenderCAP);
     $(".currentHPText").text("Health Points = " + currentFighterHP);
     $(".currentDefenderHPText").text("Health Points = " + currentDefenderHP);
-    
-
+    currentAP = currentAP + 6;
+    console.log(typeof(currentAP));
 });
