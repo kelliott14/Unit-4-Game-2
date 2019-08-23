@@ -5,6 +5,7 @@ var currentFighterHP;
 var currentDefender;
 var currentDefenderHP;
 var currentDefenderCAP;
+var elementHP = ["waterElement", "earthElement", "fireElement", "airElement"]
 
 var attackReady;
 
@@ -29,6 +30,13 @@ function startGame(){
 
 }
 
+//Load each element with its Health Points
+for (var i = 0; i < elementHP.length; i++){
+    var HPText = elementHP[i]
+    var getPoints = $("#"+HPText).attr("health-points")
+
+    $("#" + elementHP[i] + "HPDisplay").text("Health Points = " + getPoints);
+}
 
 //Play
 startGame();
