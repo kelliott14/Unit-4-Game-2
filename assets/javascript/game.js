@@ -46,21 +46,26 @@ $(".elementChar").on("click", function(){
     if (!fighterChosen){
         currentAP = $(this).attr("attack-points")
         currentFighterHP = $(this).attr("health-points")
-       // $(".HPDisplay").empty();
+        currentFighter = this.id;
+        $("#" + currentFighter + "HPDisplay").text("")
+        $(".currentHPText").text("Health Points = " + currentFighterHP);
 
         $(".currentFighter").html(this);
         fighterChosen = true;
         
-        $(".currentHPText").text("Health Points = " + currentFighterHP);
+
         $(".currentDefender").text("Choose your defender");
     
     }else if(!defenderChosen){        
         currentDefenderCAP = $(this).attr("counter-attack-points");
         currentDefenderHP = $(this).attr("health-points");
+        currentDefender = this.id;
+        $("#" + currentDefender + "HPDisplay").text("")
+        $(".currentDefenderHPText").text("Health Points = " + currentDefenderHP);
+
         $(".currentDefender").html(this);
         defenderChosen = true;
 
-        $(".currentDefenderHPText").text("Health Points = " + currentDefenderHP);
         
     }
 });
