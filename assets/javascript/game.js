@@ -6,6 +6,7 @@ var airElement;
 var currentAP;
 var currentFighter;
 var currentDefender;
+var attackReady;
 
 var fighterChosen;
 var defenderChosen;
@@ -21,38 +22,41 @@ function startGame(){
     
     fighterChosen = false;
     defenderChosen = false;
+    attackReady = false;
     currentAP = 0;
+    
 
 }
-
-//setting the fighter
-function setFighter(){
-if (!fighterChosen){
-        currentFighter = this.id;
-        $(".currentFighter").html(this);
-        
-        $(".currentDefender").text("Choose your defender");
-        fighterChosen = true;
-
-}
-}
-
-//setting the defender
-if (!defenderChosen){
-    $(".elementChar").on("click", function(){
-        currentDefender = this.id;
-        $(".currentDefender").html(this);
-        
-        defenderChosen = true;
-
-})
-}
-
 
 
 //Play
 startGame();
-console.log(fighterChosen)
 
-$(".elementChar").on("click", setFighter);
-console.log(fighterChosen)
+//Choosing fighter and defender
+$(".elementChar").on("click", function(){
+    if (!fighterChosen){
+        currentFighter = this.id;
+        $(".currentFighter").html(this);
+        fighterChosen = true;
+
+        $(".currentDefender").text("Choose your defender");
+    
+    }else{        
+        currentDefender = this.id;
+        $(".currentDefender").html(this);
+        defenderChosen = true;
+        console.log(attackReady);
+    }
+});
+
+
+//Attack
+$(".elementChar").on("click", function(){
+if ((fighterChosen == true) && (defenderChosen == true)){
+    attackReady = true;
+    attack();
+}})
+
+function attack(){
+    $(".attackButton").html("ATTACK");
+}

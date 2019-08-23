@@ -20,3 +20,10 @@ body{
     margin-top: 20px;
 }
 
+.attackCard{
+    margin-top: 100px;
+}
+
+.attackButton{
+    height: 100px;
+}
