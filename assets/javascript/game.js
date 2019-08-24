@@ -75,7 +75,7 @@ $(document).ready(function() {
         }
     });
 
-    //Attack
+    //Attack ready
     $(".elementChar").on("click", function(){
         if ((fighterChosen == true) && (defenderChosen == true)){
             attackReady = true;
@@ -83,17 +83,18 @@ $(document).ready(function() {
         }
     })
 
+    //Attack function, displays the attack button
     function attack(){
         if (!gameOver){
         $(".attackButton").show();
-        $(".attackButton").html("ATTACK");
+        $(".attackButton").html("ATTACK!");
         $(".nextRoundText").text("");
         }
     }
 
+    //Hides the attack button when not playing
     function ceaseAttack(){
         $(".attackButton").hide();
-        
     }
 
     //Attack button clicks
@@ -102,12 +103,16 @@ $(document).ready(function() {
         currentDefenderHP = currentDefenderHP - currentFighterAP;
         currentFighterHP = currentFighterHP - currentDefenderCAP;
 
+        //Scorecard updates
         $("#attackText").text("You hit for " + currentFighterAP);
         $("#hitterText").text("They hit for " + currentDefenderCAP);
         $(".currentHPText").text("Health Points = " + currentFighterHP);
         $(".currentDefenderHPText").text("Health Points = " + currentDefenderHP);
+        
+        //Attack Point increase
         currentFighterAP = currentFighterAP + 6;
     
+        //If else statements for winning, losing and going another round.
         if(rounds < 2){
             if(currentFighterHP < 0){
             $(".nextRoundText").text("You lose. Refresh to play again.")

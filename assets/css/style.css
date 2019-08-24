@@ -34,7 +34,7 @@ body{
 .defenderCard{
     height: 330px;
     background-color: #D8D9D9;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .selectorGroup{
@@ -53,4 +53,14 @@ body{
 
 .scorecardHeader{
     font-size:28px;
+}
+
+.HPDisplay{
+    font-weight: 700;
+    text-shadow: 2px 2px 20px #d8d9bd;
+}
+
+.attackButton{
+    font-size: 22px;
+    font-weight: 700;
 }

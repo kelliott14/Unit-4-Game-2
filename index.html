@@ -1,79 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>In Your Element</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>In Your Element</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="./assets/css/style.css">
 
-<body>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card-group bg-transparent selectorGroup" >
-                <div class="card bg-transparent text-center elementChar" id="waterElement" counter-attack-points="10" health-points="120" attack-points="10">
-                    <img class="card-img-top rounded mx-auto d-block elementPics"  src="./assets/images/waterpic.jpg">
-                    <h5 class="card-title HPDisplay" id="waterElementHPDisplay"></h5>
-                </div>
-                <div class="card bg-transparent text-center elementChar" id="earthElement" counter-attack-points="5" health-points="100" attack-points="10">
-                        <img class="card-img-top rounded mx-auto d-block elementPics"  src="./assets/images/earthpic.jpg">
-                        <h5 class="card-title HPDisplay" id="earthElementHPDisplay"></h5>
-                </div>
-                <div class="card bg-transparent text-center elementChar" id="fireElement" counter-attack-points="20" health-points="150" attack-points="10">
-                        <img class="card-img-top rounded mx-auto d-block elementPics"  src="./assets/images/firepic.jpg">
-                        <h5 class="card-title HPDisplay" id="fireElementHPDisplay"></h5>
-                </div>
-                <div class="card bg-transparent text-center elementChar" id="airElement" counter-attack-points="25" health-points="180" attack-points="10">
-                        <img class="card-img-top rounded mx-auto d-block elementPics" src="./assets/images/airpic.jpg">
-                        <h5 class="card-title HPDisplay" id="airElementHPDisplay"></h5>
-                </div>                   
-            </div>
-        </div>
-    </div>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon/favicon-16x16.png">
+        <link rel="manifest" href="./assets/images/favicon/site.webmanifest">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
 
-    <div class="row">
-        <div class="col-md-5">
-            <div class="card text-center fighterCard">
-                <h5 class="card-title" id="chooseFighterText"></h5>
-                <div class="card-img-top rounded mx-auto d-block currentFighter"></div>
-                <h5 class="card-title currentHPText"></h5>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="card attackCard">
-                <button type="button" class="btn btn-outline-warning attackButton"></button></button>
-            </div>
-        </div>
-        <div class="col-md-5">
-            <div class="card text-center defenderCard">
-                <h5 class="card-title" id="chooseDefenderText"></h5>
-                <div class="card-img-top rounded mx-auto d-block currentDefender"></div>
-                <h5 class="card-title currentDefenderHPText"></h5>
-            </div>
-        </div>
-    </div>
+    </head>
 
-    <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-            <div class="card scorecardCard">
-                <div class="card-body">
-                    <h5 class="nextRoundText"></h5>
-                    <h5 class="card-title scorecardHeader">Scorecard</h5>
-                    <p id="attackText"></p>
-                    <p id="hitterText"></p>
+    <body>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-group  selectorGroup" >
+                    <div class="card bg-transparent text-center elementChar" id="waterElement" counter-attack-points="10" health-points="120" attack-points="10">
+                        <img class="card-img-top rounded mx-auto d-block elementPics"  src="./assets/images/waterpic.jpg">
+                        <h5 class="card-title HPDisplay" id="waterElementHPDisplay"></h5>
+                    </div>
+                    <div class="card bg-transparent text-center elementChar" id="earthElement" counter-attack-points="5" health-points="100" attack-points="10">
+                            <img class="card-img-top rounded mx-auto d-block elementPics"  src="./assets/images/earthpic.jpg">
+                            <h5 class="card-title HPDisplay" id="earthElementHPDisplay"></h5>
+                    </div>
+                    <div class="card bg-transparent text-center elementChar" id="fireElement" counter-attack-points="20" health-points="150" attack-points="10">
+                            <img class="card-img-top rounded mx-auto d-block elementPics"  src="./assets/images/firepic.jpg">
+                            <h5 class="card-title HPDisplay" id="fireElementHPDisplay"></h5>
+                    </div>
+                    <div class="card bg-transparent text-center elementChar" id="airElement" counter-attack-points="25" health-points="180" attack-points="10">
+                            <img class="card-img-top rounded mx-auto d-block elementPics" src="./assets/images/airpic.jpg">
+                            <h5 class="card-title HPDisplay" id="airElementHPDisplay"></h5>
+                    </div>                   
                 </div>
             </div>
         </div>
-    </div>
 
-</body>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card text-center fighterCard">
+                    <h5 class="card-title" id="chooseFighterText"></h5>
+                    <div class="card-img-top rounded mx-auto d-block currentFighter"></div>
+                    <h5 class="card-title currentHPText"></h5>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card attackCard">
+                    <button type="button" class="btn btn-outline-warning attackButton"></button></button>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="card text-center defenderCard">
+                    <h5 class="card-title" id="chooseDefenderText"></h5>
+                    <div class="card-img-top rounded mx-auto d-block currentDefender"></div>
+                    <h5 class="card-title currentDefenderHPText"></h5>
+                </div>
+            </div>
+        </div>
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="./assets/javascript/game.js"></script>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="card scorecardCard">
+                    <div class="card-body">
+                        <h5 class="nextRoundText"></h5>
+                        <h5 class="card-title scorecardHeader">Scorecard</h5>
+                        <p id="attackText"></p>
+                        <p id="hitterText"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./assets/javascript/game.js"></script>
 
 </html>
