@@ -8,6 +8,7 @@ var currentDefenderCAP;
 var elementHP = ["waterElement", "earthElement", "fireElement", "airElement"]
 
 var attackReady;
+var gameOver;
 
 var fighterChosen;
 var defenderChosen;
@@ -25,6 +26,7 @@ function startGame(){
     attackReady = false;
     currentAP = 0;
     rounds = 0;
+    gameOver = false;
     
     $(".attackButton").hide();
 
@@ -43,31 +45,33 @@ startGame();
 
 //Choosing fighter and defender
 $(".elementChar").on("click", function(){
-    if (!fighterChosen){
-        currentAP = $(this).attr("attack-points")
-        currentFighterHP = $(this).attr("health-points")
-        currentFighter = this.id;
-        $("#" + currentFighter + "HPDisplay").text("")
-        $(".currentHPText").text("Health Points = " + currentFighterHP);
+    if (!gameOver){
+        if (!fighterChosen){
+            currentAP = $(this).attr("attack-points")
+            currentFighterHP = $(this).attr("health-points")
+            currentFighter = this.id;
+            $("#" + currentFighter + "HPDisplay").text("")
+            $(".currentHPText").text("Health Points = " + currentFighterHP);
 
-        $(".currentFighter").html(this);
-        fighterChosen = true;
+            $(".currentFighter").html(this);
+            fighterChosen = true;
+            
+
+            $(".currentDefender").text("Choose your defender");
         
+        }else if(!defenderChosen){        
+            currentDefenderCAP = $(this).attr("counter-attack-points");
+            currentDefenderHP = $(this).attr("health-points");
+            currentDefender = this.id;
+            $("#" + currentDefender + "HPDisplay").text("")
+            $(".currentDefenderHPText").text("Health Points = " + currentDefenderHP);
 
-        $(".currentDefender").text("Choose your defender");
-    
-    }else if(!defenderChosen){        
-        currentDefenderCAP = $(this).attr("counter-attack-points");
-        currentDefenderHP = $(this).attr("health-points");
-        currentDefender = this.id;
-        $("#" + currentDefender + "HPDisplay").text("")
-        $(".currentDefenderHPText").text("Health Points = " + currentDefenderHP);
-
-        $(".currentDefender").html(this);
-        defenderChosen = true;
+            $(".currentDefender").html(this);
+            defenderChosen = true;
 
         
     }
+}
 });
 
 
@@ -80,9 +84,11 @@ if ((fighterChosen == true) && (defenderChosen == true)){
 }})
 
 function attack(){
+    if (!gameOver){
     $(".attackButton").show();
     $(".attackButton").html("ATTACK");
-    $(".nextRoundText").text("")
+    $(".nextRoundText").text("");
+    }
    
 }
 
@@ -108,6 +114,8 @@ $(".attackButton").on("click", function(){
         $(".nextRoundText").text("You loose. Refresh to play again.")
         attackReady = false;
         ceaseAttack();
+        gameOver = true;
+        console.log(gameOver)
     
     }else if(currentDefenderHP < 0){
         $(".nextRoundText").text("You win. Select another defender.")
@@ -118,6 +126,7 @@ $(".attackButton").on("click", function(){
 
     if(rounds == 3){
         $(".scorecardCard").html("<h2>You win! Refresh to play again.</h2>")
+        ceaseAttack();
     }
 
 });
