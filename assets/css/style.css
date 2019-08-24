@@ -19,7 +19,7 @@ body{
 .scorecardCard{
     margin-top: 20px;
     text-align: center;
-    height: 310px;
+    height: 280px;
 }
 
 .attackCard{
@@ -32,11 +32,25 @@ body{
 
 .fighterCard,
 .defenderCard{
-    height: 310px;
+    height: 330px;
     background-color: #D8D9D9;
     opacity: 0.8;
 }
 
 .selectorGroup{
     height: 310px;
+}
+
+.nextRoundText{
+    padding: 20px;
+}
+
+#chooseDefenderText,
+#chooseFighterText{
+    padding-top: 20px;
+    font-size: 32px;
+}
+
+.scorecardHeader{
+    font-size:28px;
 }
